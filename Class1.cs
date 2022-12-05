@@ -10,6 +10,7 @@ namespace AnwaltMenu
     public class Mod : MelonMod
     {
         public static PlayerControl? pControl;
+        public static float movementSpeed = 0f;
         public static bool infinityJump = false;
         public static bool noAttackCooldown = false;
         public static bool noDamge = false;
@@ -36,7 +37,7 @@ namespace AnwaltMenu
         public static void MainWindow(int windowID)
         {
             GUILayout.Label("Speed Hack");
-            pControl.movementSpeed = GUILayout.HorizontalSlider(pControl.movementSpeed, 1f, 1000f);
+            movementSpeed = pControl.movementSpeed = GUILayout.HorizontalSlider(pControl.movementSpeed, 1f, 1000f);
             infinityJump = GUILayout.Toggle(infinityJump, "Infinity Jump");
             noAttackCooldown = GUILayout.Toggle(noAttackCooldown, "No Attack Cooldown");
             noDamge = GUILayout.Toggle(noDamge, "No Damge");
@@ -71,6 +72,7 @@ namespace AnwaltMenu
     {
         private static void Prefix(PlayerControl __instance)
         {
+            if (Mod.movementSpeed != 0f) __instance.movementSpeed = Mod.movementSpeed;
             Mod.pControl = __instance;
         }
     }
