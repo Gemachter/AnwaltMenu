@@ -3,7 +3,7 @@ using AnwaltMenu;
 using MelonLoader;
 using HarmonyLib;
 using UnityEngine;
-[assembly: MelonInfo(typeof(Mod), "Anwalt menu", "0.0.1", "Gemachter")]
+[assembly: MelonInfo(typeof(Mod), "Anwalt menu", "0.1.1", "Gemachter")]
 
 namespace AnwaltMenu
 {
@@ -31,7 +31,7 @@ namespace AnwaltMenu
         {
             if (pControl != null)
             {
-                GUI.Window(0, new Rect(20, 20, 200, 300), MainWindow, "Anwalt Menu 0.0.1");
+                GUI.Window(0, new Rect(20, 20, 200, 300), MainWindow, "Anwalt Menu 0.1.1");
             }
         }
         public static void MainWindow(int windowID)
